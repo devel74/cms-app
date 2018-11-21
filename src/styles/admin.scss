@@ -1,0 +1,38 @@
+.is-admin-view {
+  .section {
+    min-height: 30px;
+
+    &:hover {
+      &::before {
+        background-color: rgba(0,0,0,.7);
+      }
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      right: 4px;
+      bottom: 4px;
+      outline: 2px dashed rebeccapurple;
+      background-color: rgba(0,0,0,.6);
+      transition: .1s;
+      cursor: pointer;
+    }
+
+    &.is-active {
+      &::before {
+        background-color: rgba(30, 115, 8, 0.72);
+      }
+    }
+  }
+  .section-name {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    color: #fff;
+  }
+}

@@ -1,0 +1,47 @@
+.home-template {
+  section {
+    position: relative;
+  }
+  &__section-headerLeft {
+    width: 33.3333%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  &__section-headerCenter {
+    width: 33.3333%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__section-headerRight {
+    width: 33.3333%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  &__header {
+    background: #fff;
+  }
+  &__header-inner {
+    margin: 0 auto;
+    padding: 0 10px;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+  }
+  &__section-hero {
+    width: 100%;
+
+    min-height: 300px;
+  }
+  &__section-gamesMenu {
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+  &__section-content {
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+}

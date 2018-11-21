@@ -1,25 +1,22 @@
+import './styles/App.scss';
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import HomeTemplate from './templates/home'
+import AdminButton from './components/AdminButton'
+import ComponentPicker from './components/ComponentPicker'
+import { observer } from 'mobx-react'
+import core from './core';
 
+@observer
 class App extends Component {
+  get className () {
+    return `main ${core.adminMode.isAdminView ? 'is-admin-view' : ''} ${core.mainMenu.isOpen ? 'is-menu-open' : ''}`
+  }
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div className={this.className}>
+        <HomeTemplate />
+        <AdminButton />
+        <ComponentPicker />
       </div>
     );
   }

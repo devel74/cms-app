@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300i,400,700,700i');
+@import "./admin";
+
+body {
+  font-family: Roboto, sans-serif;
+  background: #fff url("/img/back.jpg") repeat-y;
+}
+
+.container {
+  margin:  0 auto;
+  padding: 0 15px;
+  max-width: 800px;
+}
+
+.section-name {
+  display: none;
+}
+
+.main {
+  position: relative;
+  transition: .2s;
+
+  &.is-menu-open {
+    transform: translateX(300px);
+  }
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
