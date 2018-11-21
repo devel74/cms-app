@@ -1,15 +1,19 @@
-import React, { Component } from 'react';
-
-import classNames  from 'classnames'
-
+import React, { Component } from 'react'
+import classNames from 'classnames'
 import core from './../../core'
 import HeroBanner from './../../components/HeroBanner'
 import Logo from './../../components/Logo'
 import BurgerMenu from './../../components/BurgerMenu'
 import { observer } from 'mobx-react'
+import PropTypes from 'prop-types'
 
 @observer
 class Section extends Component {
+  static propTypes = {
+    template: PropTypes.string,
+    id: PropTypes.string
+  }
+
   sections = core.admin.sections
   components = {
     HeroBanner: HeroBanner,
@@ -18,7 +22,7 @@ class Section extends Component {
   }
   getComponents (name) {
     const Component = this.components[name] || null
-    return <Component key={name}/>
+    return <Component key={name} />
   }
   setActiveSection (id) {
     if (!core.admin.isAdminView) return null
@@ -30,8 +34,7 @@ class Section extends Component {
     return classNames('section', `${template}__section-${id}`, {'is-active': isActiveSection})
   }
 
-  render() {
-
+  render () {
     const { id } = this.props
     return (
       <section
@@ -43,8 +46,8 @@ class Section extends Component {
           ? this.sections[id].map(name => this.getComponents(name))
           : null}
       </section>
-    );
+    )
   }
 }
 
-export default Section;
+export default Section

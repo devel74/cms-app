@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
-import './index.scss';
+import React, { Component } from 'react'
+import './index.scss'
 import core from '../../core'
 import { observer } from 'mobx-react'
 
 @observer
 class ComponentPicker extends Component {
-  render() {
+  render () {
     const components = [
       {name: 'HeroBanner'},
       {name: 'BurgerMenu'},
@@ -35,12 +35,12 @@ class ComponentPicker extends Component {
             </ul>
           </p>
         </div>
-        <div onClick={() => core.admin.isComponentPickerOpen = !isOpen} className="btn btn-info component-picker__button">
+        <div onClick={() => (core.admin.isComponentPickerOpen = !isOpen)} className='btn btn-info component-picker__button'>
           Components picker
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default ComponentPicker;
+export default ComponentPicker
