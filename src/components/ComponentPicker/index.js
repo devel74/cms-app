@@ -11,8 +11,8 @@ class ComponentPicker extends Component {
       {name: 'BurgerMenu'},
       {name: 'Logo'}
     ]
-    const isOpen = core.adminMode.isComponentPickerOpen
-    const { sections, activeSection } = core.adminMode
+    const isOpen = core.admin.isComponentPickerOpen
+    const { sections, activeSection } = core.admin
     return (
       <div>
         <div className={`component-picker ${isOpen ? 'is-opened' : ''}`}>
@@ -20,7 +20,7 @@ class ComponentPicker extends Component {
             <i>Current section: </i>{activeSection}<br />
             <ul className={'nav flex-column'}>
               {sections[activeSection].map((name) => (
-                <li onClick={() => core.adminMode.deleteComponent(name)} className={'nav-item'} key={name}>
+                <li onClick={() => core.admin.deleteComponent(name)} className={'nav-item'} key={name}>
                   Delete {name}
                 </li>
               ))}
@@ -30,12 +30,12 @@ class ComponentPicker extends Component {
             Add Components:
             <ul className={'nav flex-column'}>
               {components.map((item) => (
-                <li onClick={() => core.adminMode.addComponent(item.name)} className={'nav-item'} key={item.name}>{item.name}</li>
+                <li onClick={() => core.admin.addComponent(item.name)} className={'nav-item'} key={item.name}>{item.name}</li>
               ))}
             </ul>
           </p>
         </div>
-        <div onClick={() => core.adminMode.isComponentPickerOpen = !isOpen} className="btn btn-info component-picker__button">
+        <div onClick={() => core.admin.isComponentPickerOpen = !isOpen} className="btn btn-info component-picker__button">
           Components picker
         </div>
       </div>

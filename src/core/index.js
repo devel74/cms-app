@@ -1,9 +1,9 @@
-import adminMode from "./AdminMode";
-import mainMenu from "./MainMenu";
+import admin from "./Admin";
+import menu from "./Menu";
 
 const core = {
-  adminMode: adminMode,
-  mainMenu: mainMenu,
+  admin: admin,
+  menu: menu,
 }
 
 window.core = core;

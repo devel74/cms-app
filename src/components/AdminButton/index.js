@@ -7,10 +7,10 @@ import { observer } from 'mobx-react'
 @observer
 class AdminButton extends Component {
   render() {
-    const isAdminView = core.adminMode.isAdminView
+    const isAdminView = core.admin.isAdminView
 
     return (
-      <button onClick={() => core.adminMode.changeMode(!isAdminView)} className={'admin-button btn btn-warning'}>
+      <button onClick={() => core.admin.changeMode(!isAdminView)} className={'admin-button btn btn-warning'}>
         {isAdminView ? 'Normal view' : 'Admin view'}
       </button>
     );

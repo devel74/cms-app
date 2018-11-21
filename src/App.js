@@ -9,7 +9,7 @@ import core from './core';
 @observer
 class App extends Component {
   get className () {
-    return `main ${core.adminMode.isAdminView ? 'is-admin-view' : ''} ${core.mainMenu.isOpen ? 'is-menu-open' : ''}`
+    return `main ${core.admin.isAdminView ? 'is-admin-view' : ''} ${core.menu.isOpen ? 'is-menu-open' : ''}`
   }
   render() {
     return (

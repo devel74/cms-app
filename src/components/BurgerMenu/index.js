@@ -6,10 +6,10 @@ import './index.scss';
 @observer
 class Index extends Component {
   render() {
-    const isOpen = core.mainMenu.isOpen
+    const isOpen = core.menu.isOpen
     return (
       <div className={'burger-menu'}>
-        <i onClick={() => core.mainMenu.isOpen = !isOpen} className="fas fa-align-justify sz-md" />
+        <i onClick={() => core.menu.isOpen = !isOpen} className="fas fa-align-justify sz-md" />
       </div>
     );
   }

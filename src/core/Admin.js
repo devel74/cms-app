@@ -1,6 +1,6 @@
 import {observable} from "mobx"
 
-class AdminMode {
+class Admin {
   @observable isAdminView = true
   @observable isComponentPickerOpen = true
   @observable sections = {
@@ -24,6 +24,6 @@ class AdminMode {
   }
 }
 
-const adminMode = new AdminMode()
+const admin = new Admin()
 
-export default adminMode
+export default admin
