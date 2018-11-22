@@ -2,43 +2,59 @@ import React, { Component } from 'react'
 import './index.scss'
 import core from '../../core'
 import { observer } from 'mobx-react'
+import Typography from '@material-ui/core/Typography/Typography'
+import Drawer from '@material-ui/core/Drawer/Drawer'
+import Card from '@material-ui/core/Card'
+import CardActionArea from '@material-ui/core/CardActionArea'
+import CardMedia from '@material-ui/core/CardMedia'
+import CardActions from '@material-ui/core/CardActions'
+import CardContent from '@material-ui/core/CardContent'
+import Toolbar from '@material-ui/core/Toolbar'
+import Button from '@material-ui/core/Button'
 
 @observer
 class ComponentPicker extends Component {
-  render () {
-    const components = [
-      {name: 'HeroBanner'},
-      {name: 'BurgerMenu'},
-      {name: 'Logo'}
-    ]
-    const isOpen = core.admin.isComponentPickerOpen
-    const { sections, activeSection } = core.admin
+  get renderComponents () {
     return (
-      <div>
-        <div className={`component-picker ${isOpen ? 'is-opened' : ''}`}>
-          <p>
-            <i>Current section: </i>{activeSection}<br />
-          </p>
-          <ul className={'nav flex-column'}>
-            {sections[activeSection].map((name) => (
-              <li onClick={() => core.admin.deleteComponent(name)} className={'nav-item'} key={name}>
-                Delete {name}
-              </li>
-            ))}
-          </ul>
-          <p>
-            Add Components:
-          </p>
-          <ul className={'nav flex-column'}>
-            {components.map((item) => (
-              <li onClick={() => core.admin.addComponent(item.name)} className={'nav-item'} key={item.name}>{item.name}</li>
-            ))}
-          </ul>
+      core.admin.componentsList.map(component => (
+        <Card>
+          <CardActionArea>
+            <CardMedia
+              image='/static/images/cards/contemplative-reptile.jpg'
+              title='Contemplative Reptile'
+            />
+            <CardContent>
+              <Typography gutterBottom variant='h5' component='h2'>
+                Lizard
+              </Typography>
+              <Typography component='p'>
+                Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
+                across all continents except Antarctica
+              </Typography>
+            </CardContent>
+          </CardActionArea>
+          <CardActions>
+            <Button size='small' color='primary'>
+              Share
+            </Button>
+            <Button size='small' color='primary'>
+              Learn More
+            </Button>
+          </CardActions>
+        </Card>
+      ))
+    )
+  }
+  render () {
+    return (
+      <Drawer anchor='right' open={core.admin.isComponentPickerOpen} onClose={() => { core.admin.isComponentPickerOpen = false }}>
+        <div className='component-picker'>
+          <Toolbar>
+            <Typography variant={'h6'}>Current section: Logo</Typography>
+          </Toolbar>
+          {this.renderComponents}
         </div>
-        <div onClick={() => (core.admin.isComponentPickerOpen = !isOpen)} className='btn btn-info component-picker__button'>
-          Components picker
-        </div>
-      </div>
+      </Drawer>
     )
   }
 }

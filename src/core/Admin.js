@@ -16,6 +16,11 @@ class Admin {
   changeMode (value) {
     this.isAdminView = value
   }
+  componentsList = [
+    {name: 'HeroBanner', summary: 'This is summary'},
+    {name: 'BurgerMenu', summary: 'This is summary'},
+    {name: 'Logo', summary: 'This is summary'}
+  ]
   deleteComponent (name) {
     this.sections[this.activeSection].remove(name)
   }

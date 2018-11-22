@@ -7,4 +7,8 @@
   background-color: #2196f3;
   transition: .2s;
   z-index: 1000;
+
+  &__buttons {
+    flex-grow: 1;
+  }
 }

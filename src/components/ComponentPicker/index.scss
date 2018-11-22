@@ -1,29 +1,7 @@
 .component-picker {
-  position: fixed;
-  top: 110px;
-  right: 0;
-  width: 300px;
-  padding: 10px;
-  transform: translateX(300px);
-  transition: .2s;
-  background: #ccc;
+  width: 330px;
 
-  &.is-opened {
-    transform: translateX(0);
-  }
-
-  &__button {
-    position: fixed;
-    right: 0;
-    top: 60px;
-    cursor: pointer;
-  }
-
-  li {
-    cursor: pointer;
-    
-    &:hover {
-      text-decoration: underline;
-    }
+  &__component-list-details {
+    flex-direction: column;
   }
 }
