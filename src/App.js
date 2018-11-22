@@ -1,5 +1,7 @@
 import './styles/App.scss'
 import React, { Component } from 'react'
+import { MuiThemeProvider } from '@material-ui/core/styles'
+import theme from './theme'
 import HomeTemplate from './templates/home'
 import AdminButton from './components/AdminButton'
 import ComponentPicker from './components/ComponentPicker'
@@ -14,12 +16,14 @@ class App extends Component {
   }
   render () {
     return (
-      <div className={this.className}>
-        <AdminBar />
-        <HomeTemplate />
-        <AdminButton />
-        <ComponentPicker />
-      </div>
+      <MuiThemeProvider theme={theme}>
+        <div className={this.className}>
+          <AdminBar />
+          <HomeTemplate />
+          <AdminButton />
+          <ComponentPicker />
+        </div>
+      </MuiThemeProvider>
     )
   }
 }
