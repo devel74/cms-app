@@ -123,6 +123,7 @@
   },
   "devDependencies": {
     "@material-ui/core": "^3.5.1",
+    "@material-ui/icons": "^3.0.1",
     "babel-preset-mobx": "^2.0.0",
     "eslint-loader": "^2.1.1",
     "eslint-plugin-react": "^7.11.1",
