@@ -23,6 +23,9 @@ body {
   &.is-menu-open {
     transform: translateX(300px);
   }
+  &.is-admin-view {
+    transform: translateY(64px);
+  }
 }
 
 *::-webkit-scrollbar {
