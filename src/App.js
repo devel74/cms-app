@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import HomeTemplate from './templates/home'
 import AdminButton from './components/AdminButton'
 import ComponentPicker from './components/ComponentPicker'
+import AdminBar from './components/AdminBar/AdminBar'
 import { observer } from 'mobx-react'
 import core from './core'
 
@@ -14,6 +15,7 @@ class App extends Component {
   render () {
     return (
       <div className={this.className}>
+        <AdminBar />
         <HomeTemplate />
         <AdminButton />
         <ComponentPicker />
