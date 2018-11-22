@@ -3,20 +3,30 @@ import './home.scss'
 import Section from './../../components/Section'
 
 class Home extends Component {
-  render () {
-    const template = 'home-template'
+  template = 'home-template'
+  get renderHeader () {
     return (
-      <div className={template}>
-        <header className={`${template}__header`}>
-          <div className={`${template}__header-inner`}>
-            <Section template={template} id={'headerLeft'} />
-            <Section template={template} id={'headerCenter'} />
-            <Section template={template} id={'headerRight'} />
-          </div>
-        </header>
-        <Section template={template} id={'hero'} />
-        <Section template={template} id={'gamesMenu'} />
-        <Section template={template} id={'content'} />
+      <header className={`${this.template}__header`}>
+        <div className={`${this.template}__header-inner`}>
+          <Section template={this.template} id={'headerLeft'} />
+          <Section template={this.template} id={'headerCenter'} />
+          <Section template={this.template} id={'headerRight'} />
+        </div>
+      </header>
+    )
+  }
+  renderSection (name) {
+    return (
+      <Section template={this.template} id={name} />
+    )
+  }
+  render () {
+    return (
+      <div className={this.template}>
+        {this.renderHeader}
+        {this.renderSection('hero')}
+        {this.renderSection('gamesMenu')}
+        {this.renderSection('content')}
       </div>
     )
   }

@@ -1,25 +1,25 @@
-import './styles/App.scss';
-import React, { Component } from 'react';
+import './styles/App.scss'
+import React, { Component } from 'react'
 import HomeTemplate from './templates/home'
 import AdminButton from './components/AdminButton'
 import ComponentPicker from './components/ComponentPicker'
 import { observer } from 'mobx-react'
-import core from './core';
+import core from './core'
 
 @observer
 class App extends Component {
   get className () {
     return `main ${core.admin.isAdminView ? 'is-admin-view' : ''} ${core.menu.isOpen ? 'is-menu-open' : ''}`
   }
-  render() {
+  render () {
     return (
       <div className={this.className}>
         <HomeTemplate />
         <AdminButton />
         <ComponentPicker />
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
