@@ -4,4 +4,10 @@
   &__component-list-details {
     flex-direction: column;
   }
+  &__image {
+    height: 130px;
+    background-size: cover;
+    width: 160px;
+    margin: 0 auto;
+  }
 }

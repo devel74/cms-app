@@ -10,14 +10,21 @@ import './AdminBar.scss'
 import core from '../../core'
 
 class AdminBar extends Component {
-  get renderAddButton () {
+  get renderAddButtons () {
     return (
       <div className='admin-bar__buttons'>
         <Button
           onClick={() => (core.admin.isComponentPickerOpen = !core.admin.isComponentPickerOpen)}
           color='inherit'
         >
-          Add Component<AddIcon />
+          Add Component
+          <AddIcon fontSize='small' />
+        </Button>
+        <Button
+          onClick={() => (core.admin.isComponentPickerOpen = !core.admin.isComponentPickerOpen)}
+          color='inherit'
+        >
+          Sections
         </Button>
       </div>
     )
@@ -27,7 +34,7 @@ class AdminBar extends Component {
       <div className={'admin-bar'}>
         <AppBar position='static' color='primary'>
           <Toolbar>
-            {this.renderAddButton}
+            {this.renderAddButtons}
             <Typography variant='h6' color='inherit'>Hi, Admin!</Typography>
             <Avatar alt='Admin' src={avatarImg} className={'admin-bar__avatar'} />
           </Toolbar>
